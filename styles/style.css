@@ -9,6 +9,7 @@
   background: var(--background-image) no-repeat top center;
   background-size: auto 768px;
   background-color: var(--background-color);
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -70,17 +71,87 @@
   }
 
 }
-  
+
 
 .header__theme-menu-button {
   background: none;
   border: transparent;
-  color: var(--rec-color) ;
+  color: var(--rec-color);
   font-family: inherit;
   font-size: 18px;
 
 }
 
-.decorated-zone {}
+.header__title-section {
+  display: flex;
+  padding-block-start: 319px;
+  padding-block-end: 319px;
+  flex-direction: column;
+  padding-inline-end: 20px;
 
-.decorated-zone::after {}
+}
+
+.header__subtitle-decor {
+  background: var(--rec-color);
+  width: 491px;
+  height: 70px;
+  align-self: end;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  /* 130% */
+  padding-inline-end: 20px;
+  color: black;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-inline-end: 1px solid var(--rec-color);
+  border-block-start: 1px solid var(--rec-color);
+  right: 17px;
+  top: 14px;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-inline-start: 1px solid var(--rec-color);
+  border-block-end: 1px solid var(--rec-color);
+  left: 10px;
+  bottom: 100px;
+
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__section-item {
+  display: flex;
+  color: var(--main-text-color);
+}
+
+.main__section {
+  display: flex;
+  color: var(--title-shadow);
+}
+
+.main__section-title {
+  color: #FF0070;
+  font-family: "IBM Plex Mono";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+}
+
+.main__section-list{
+display: flex ;
+
+}
