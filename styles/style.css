@@ -23,12 +23,12 @@
   margin: 0 -2%;
 }
 
-  @media (width < 768px) and (width >= 375px) {
-   .header__title {
+@media (width < 768px) and (width >=375px) {
+  .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-left: 0;
     line-height: 82.5%;
-}
+  }
 }
 
 .header__theme-menu {
@@ -59,15 +59,35 @@
   background-color: var(--rec-color);
   top: 50%;
   right: 0;
-  border-top: 1px solid #FF0070;
-  border-right: 1px solid #FF0070;
 
 }
+
+.header__theme-menu-button {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--corners-color);
+  line-height: 100%;
+  padding: 2.5px 12px;
+  border: transparent;
+  background: none;
+  cursor: pointer;
+
+}
+
+.header__theme-menu-button:hover {
+  border: var(--hover-color);
+}
+
 
 .header__theme-menu-button_active {
   border: 1px solid;
+  pointer-events: none;
 }
 
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--corners-color);
+  outline: none;
+}
 
 
 .header__theme-menu-list {
@@ -103,21 +123,10 @@
   }
 }
 
-
-.header__theme-menu-button {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--corners-color);
-  line-height: 100%;
-  padding: 2.5px 12px;
-  border: transparent;
-  background: none;
-  cursor: pointer;
-
-}
-
-.header__theme-menu-button:hover {
-  border: var(--hover-color);
+@media (width < 768px) and (width >=375px) {
+  .header {
+    padding: 0 10px;
+  }
 }
 
 @media (width < 1024px) and (width >=768px) {
@@ -165,30 +174,11 @@
   }
 }
 
-.decorated-zone::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-inline-start: 1px solid var(--rec-color);
-  border-block-end: 1px solid var(--rec-color);
-  left: 20px;
-  bottom: 20px;
-
+@media (width < 425px) {
+  .header__subtitle-decor {
+    width: 100%;
+  }
 }
-
-
-.decorated-zone::before {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-inline-end: 1px solid var(--rec-color);
-  border-block-start: 1px solid var(--rec-color);
-  right: 20px;
-  top: 20px;
-}
-
 
 
 .main {
@@ -205,6 +195,20 @@
   gap: 10px;
 }
 
+.section__article-text-link {
+  border: transparent;
+  text-shadow: 3px 3px 0px var(--link-shadow);
+}
+
+.section__article-text-link:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.section__article-text-link:focus-visible {
+  outline: none;
+  border: 1px solid var(--main-text-color);
+}
+
 .main__section:first-of-type,
 .main__section:nth-of-type(3) {
   display: flex;
@@ -219,11 +223,12 @@
   width: 33%;
 }
 
-@media (width < 768px) and (width >= 375px) {
+@media (width < 768px) and (width >=375px) {
   .main {
     padding: 0 10px;
     margin: 34px 0;
-    gap: 50px;
+    gap: 32px;
+    /*50*/
   }
 }
 
@@ -283,6 +288,12 @@
   }
 }
 
+@media (width < 768px) and (width >=375px) {
+  .main__section:nth-of-type(2) .section__article-text {
+    padding: 0;
+  }
+}
+
 .section__article-item {
   display: flex;
   flex-direction: column;
@@ -304,9 +315,7 @@
   }
 }
 
-.title-decor {
-  background: var(--title-decor);
-}
+
 
 @media (width >=1024px) {
   .main__section:nth-of-type(2) .main__section-list {
@@ -321,7 +330,7 @@
 
 @media (width < 1024px) and (width >=375px) {
   .main__section:nth-of-type(2) .section__article-item {
-    gap: 20px;
+    gap: 12px;
   }
 }
 
@@ -329,6 +338,14 @@
   .main__section:nth-of-type(2) .section__article-item {
     flex: 1 0 auto;
     width: 100%;
+  }
+}
+
+@media (width < 1024px) and (width >=768px) {
+
+  .main__section:first-of-type .main__section-list,
+  .main__section:nth-of-type(3) .main__section-list {
+    width: 65%;
   }
 }
 
@@ -386,17 +403,13 @@
     width: 100%;
     height: auto;
   }
-
-  @media (width < 425px) {
-    .header__subtitle-decor {
-      width: 100%;
-    }
-  }
+}
+ 
 
   .main__section:last-of-type .section__image-container {
     width: 100px;
   }
-}
+
 
 @media (width >=768px) {
   .main__section:last-of-type {
@@ -425,6 +438,7 @@
 .footer {
   padding: 282px;
   position: relative;
+  text-align: center;
 }
 
 .footer__title {
@@ -442,3 +456,8 @@
   }
 }
 
+@media (width < 1024px) and (width >=768px) {
+  .footer {
+    padding: 434px 20px;
+  }
+}
