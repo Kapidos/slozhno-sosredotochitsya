@@ -1,5 +1,7 @@
 :root {
   --font-family: "IBM Plex mono", sans-serif;
+  --accent-color: #ff8dcb;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
