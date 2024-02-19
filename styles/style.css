@@ -95,7 +95,14 @@
   top: 20px;
 }
 
-@media (width < 768px) and (width >=375px) {
+@media (width < 768px) {
+  .decorated-zone::after {
+    right: 10px;
+    top: 10px;
+  }
+}
+
+@media (width <=376px) {
   .decorated-zone::after {
     right: 10px;
     top: 10px;
@@ -126,7 +133,6 @@
   gap: 12px;
 }
 
-/*
 @media (width < 1024px) {
   .header__theme-menu-list {
     flex-direction: column;
@@ -151,7 +157,6 @@
     padding-top: 172px;
   }
 }
-*/
 
 .header__title-section {
   display: flex;
@@ -248,8 +253,6 @@
 
 .main__what {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 0 20px;
 }
 
@@ -258,6 +261,7 @@
   font-size: 18px;
   font-weight: bold;
   margin-block-end: 22px;
+  width: 33%;
 }
 
 .main__what-list {
@@ -268,7 +272,7 @@
 }
 
 .main__what-item {
-  grid-row: 2;
+  grid-column: span 1;
 }
 
 .main__what-item:last-child {
@@ -322,8 +326,8 @@
   }
 
   .header__rec {
-    top: 11px;
-    right: 39px;
+    top: 21px;
+    right: 48px;
   }
 
   .decorated-zone::before {
@@ -352,16 +356,7 @@
   color: var(--article-title-color);
 }
 
-/*.main__section:first-of-type .main__section-list,
-.main__section:nth-of-type(3) .main__section-list {
-  flex: 0 0 auto;
-  flex-direction: column;
-  gap: 20px;
-  grid-column: 2 / 4;
-}
-*/
-
-@media (width <=376px) {
+@media (width <=550px) {
   .main__reasons,
   .main__how {
     display: block;
@@ -387,7 +382,7 @@
 
   .decorated-zone::before {
     left: 10px;
-    bottom: 10px;
+    bottom: 16px;
   }
 
   .main__how-title {
@@ -399,19 +394,19 @@
   line-height: 23.5px;
 }
 
-.main__section:nth-of-type(2) .section__article-text {
+.main__section .section__article-text {
   line-height: 23.4px;
 }
 
 @media (width < 1024px) and (width >=768px) {
-  .main__section:nth-of-type(2) .section__article-text {
+  .main__section .section__article-text {
     padding: 0;
     line-height: 23.4px;
   }
 }
 
 @media (width < 768px) and (width >=375px) {
-  .main__section:nth-of-type(2) .section__article-text {
+  .main__section .section__article-text {
     padding: 0;
   }
 }
@@ -423,45 +418,38 @@
 }
 
 @media (width < 768px) and (width >=375px) {
-  .main__section:first-of-type .main__section-list,
-  .main__section:nth-of-type(3) .main__section-list {
-    width: 100%;
-  }
-}
-
-@media (width < 768px) and (width >=375px) {
-  .main__section:nth-of-type(2) .main__section-title {
+  .main__section-title {
     width: 100%;
   }
 }
 
 @media (width >=1024px) {
-  .main__section:nth-of-type(2) .main__section-list {
+  .main__section-list {
     justify-content: space-between;
   }
 }
 
-.main__section:nth-of-type(2) .section__article-item {
+.main__section .section__article-item {
   flex: 0 0 auto;
   width: 32%;
 }
 
 @media (width < 1024px) and (width >=375px) {
-  .main__section:nth-of-type(2) .section__article-item {
+  .main__section .section__article-item {
     gap: 12px;
   }
 }
 
 @media (width < 1024px) and (width >=375px) {
-  .main__section:nth-of-type(2) .section__article-item {
+  .main__section .section__article-item {
     flex: 1 0 auto;
     width: 100%;
   }
 }
 
 @media (width < 1024px) and (width >=768px) {
-  .main__section:first-of-type .main__section-list,
-  .main__section:nth-of-type(3) .main__section-list {
+  .main__section .main__section-list,
+  .main__section .main__section-list {
     width: 65%;
   }
 }
@@ -470,73 +458,68 @@
   font-weight: 400;
 }
 
-.main__section:last-of-type {
-  display: grid;
-}
-
 @media (width < 1024px) and (width >=375px) {
-  .main__section:nth-of-type(2) .main__section-list {
+  .main__section .main__section-list {
     gap: 20px;
   }
 }
 
 @media (width >=768px) {
-  .main__section:last-of-type {
+  .main__picture {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 19px;
+    padding-block-end: 0px;
   }
 }
 
-.main__section:last-of-type .main__section-decor {
+.main__picture {
+  display: grid;
+}
+
+.main__picture .main__section-decor {
   grid-column: 1/-1;
   width: 100%;
   margin: 0;
 }
 
 .section__image {
+  display: block;
   object-fit: cover;
   object-position: center;
+  -o-object-fit: cover;
+  -o-object-position: center;
 }
 
 @media (width >=768px) {
-  .main__section:last-of-type .section__image {
-    -o-object-fit: cover;
-    -o-object-position: center;
+  .main__picture .section__image {
     width: 100%;
     height: 100%;
   }
 
-  .main__section:last-of-type .section__image:first-of-type,
-  .main__section:last-of-type .section__image:last-of-type {
+  .main__picture .section__image:first-of-type,
+  .main__picture .section__image:last-of-type {
     grid-column: span 2;
   }
 
-  .main__section:last-of-type .section__image:nth-of-type(2),
-  .main__section:last-of-type .section__image:nth-of-type(3) {
+  .main__picture .section__image:nth-of-type(2),
+  .main__picture .section__image:nth-of-type(3) {
     grid-row: span 2;
   }
 }
 
 @media (width < 768px) {
-  .main__section:last-of-type .section__image {
+  .main__picture .section__image {
     width: 100%;
     height: auto;
   }
 }
 
-.main__section:last-of-type .section__image-container {
+.main__picture .section__image-container {
   width: 100px;
 }
 
-@media (width >=768px) {
-  .main__section:last-of-type {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px 19px;
-  }
-}
-
 @media (width < 768px) {
-  .main__section:last-of-type {
+  .main__picture {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -544,8 +527,7 @@
 }
 
 @media (width < 768px) and (width >=375px) {
-  .main__section:first-of-type .main__section-title,
-  .main__section:nth-of-type(3) .main__section-title {
+  .main__section-title {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -565,5 +547,30 @@
   font-weight: 700;
   color: var(--title-color);
   text-shadow: 2px 2px 0px var(--title-shadow);
+}
 
+@media (width < 768px) and (width >=375px) {
+  .footer__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-left: 0;
+    line-height: 82.5%;
+  }
+}
+
+@media (width < 768px) and (width >= 375px) {
+  .footer {
+    padding: 0 10px;
+  }
+}
+
+.sss {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (width <=768px) {
+  .sss {
+    display: block;
+  }
 }

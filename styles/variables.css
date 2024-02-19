@@ -2,7 +2,7 @@
   --font-family: "IBM Plex mono", sans-serif;
   --accent-color: #ff8dcb;
   }
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -35,7 +35,7 @@
     --section-title-color: var(--main-text-color);
     --border-color: var(--title-shadow);
     --corners-color: var(--main-text-color);
-    --link-shadow: var(--title-color);
+    --link-shadow: var(--accent-color);
     --rec-color: var(--background-color);
   }
 }
