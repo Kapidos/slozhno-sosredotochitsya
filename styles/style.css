@@ -71,6 +71,7 @@
   border: transparent;
   background: none;
   cursor: pointer;
+  /*    padding: 0px 13px 7px 13px;*/
 }
 
 .decorated-zone::before {
@@ -326,8 +327,8 @@
   }
 
   .header__rec {
-    top: 21px;
-    right: 48px;
+    top: 12px;
+    right: 38px;
   }
 
   .decorated-zone::before {
@@ -448,7 +449,6 @@
 }
 
 @media (width < 1024px) and (width >=768px) {
-  .main__section .main__section-list,
   .main__section .main__section-list {
     width: 65%;
   }
@@ -468,7 +468,7 @@
   .main__picture {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 19px;
-    padding-block-end: 0px;
+    padding-block-end: 34px;
   }
 }
 
