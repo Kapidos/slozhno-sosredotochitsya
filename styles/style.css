@@ -9,6 +9,13 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
+@media (width < 550px) {
+  .page {
+    gap: 40px;  
+  }
+}
+
+
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -360,7 +367,8 @@
 @media (width <=550px) {
   .main__reasons,
   .main__how {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .main {
@@ -576,3 +584,4 @@
     flex-direction: column;
   }
 }
+
