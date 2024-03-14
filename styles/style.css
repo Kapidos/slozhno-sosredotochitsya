@@ -11,10 +11,9 @@
 
 @media (width < 550px) {
   .page {
-    gap: 40px;  
+    gap: 40px;
   }
 }
-
 
 .header {
   display: grid;
@@ -30,13 +29,18 @@
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: var(--title-color);
   text-shadow: 4px 4px 0px #ff0070;
+  line-height: 82.5%;
+}
+
+.title-decor {
+  background: var(--title-decor);
 }
 
 @media (width < 768px) and (width >=375px) {
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-left: 0;
-    line-height: 82.5%;
+    line-height: 77%;
   }
 }
 
@@ -74,11 +78,10 @@
   font-weight: 400;
   color: var(--corners-color);
   line-height: 100%;
-  padding: 2.5px 12px;
+  padding: 3px 13px;
   border: transparent;
   background: none;
   cursor: pointer;
-  /*padding: 6px 13px 2px 13px;*/
 }
 
 .decorated-zone::before {
@@ -148,13 +151,11 @@
   }
 }
 
-@media (width < 768px) and (width >=375px) {
+@media (width < 768px) and (width >=250px) {
   .header__theme-menu {
     align-self: center;
   }
-}
 
-@media (width < 768px) and (width >=375px) {
   .header {
     padding: 0 10px;
   }
@@ -162,7 +163,7 @@
 
 @media (width < 1024px) and (width >=768px) {
   .header__theme-menu {
-    padding-top: 172px;
+    display: grid;
   }
 }
 
@@ -175,19 +176,16 @@
 .header__subtitle-decor {
   background: var(--title-decor);
   color: var(--article-title-color);
-  width: 50%;
   align-self: center;
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
   justify-self: end;
-  margin-block-end: 39px;
   max-width: 491px;
 }
 
 @media (width <=768px) {
   .header__subtitle-decor {
-    margin-block-end: 28px;
     max-width: 364px;
   }
 }
@@ -239,12 +237,12 @@
   gap: 20px;
 }
 
-.main__reasons-item {
+.main__list-card {
   display: grid;
   gap: 10px;
 }
 
-.main__reasons-item:last-child {
+.main__list-card:last-child {
   padding-block-end: 0px;
 }
 
@@ -262,14 +260,14 @@
 
 .main__what {
   display: grid;
-  gap: 0 20px;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .main__what-title {
   color: var(--corners-color);
   font-size: 18px;
   font-weight: bold;
-  margin-block-end: 20px;
   width: 33%;
 }
 
@@ -279,22 +277,22 @@
   grid-column: 1/4;
   gap: 20px;
 }
-/*
-.main__what-item {
-  grid-column: span 1;
-}*/
 
 .main__what-item:last-child {
   padding-block-end: 0px;
 }
 
-@media (width <=768px) {
+@media (width <=760px) {
   .main__what {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
   }
+}
 
-  .main__what-title {
-    width: 32%;
+@media (width >=768px) {
+  .main__what {
+    display: grid;
+    grid-template-columns: 32% 1fr 1fr;
   }
 
   .main__what-item {
@@ -316,7 +314,6 @@
 .main__how {
   display: grid;
   grid-template-columns: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem) 1fr;
-  /*grid-template-columns: 1fr 1fr 1fr;*/
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
@@ -328,14 +325,14 @@
   gap: 20px;
 }
 
-@media (width <=768px) {
+@media (width <=767px) {
   .body {
     gap: 5px;
   }
 
   .header__rec {
-    top: 19px;
-    right: 48px;
+    top: 10px;
+    right: 38px;
   }
 
   .decorated-zone::before {
@@ -346,7 +343,6 @@
 
 @media (width <=768px) {
   .main {
-    /*margin: 17px 0;*/
     gap: 80px;
   }
 }
@@ -364,7 +360,7 @@
   color: var(--article-title-color);
 }
 
-@media (width <=550px) {
+@media (width <=760px) {
   .main__reasons,
   .main__how {
     display: flex;
@@ -383,10 +379,6 @@
 
   .main__what-title {
     width: 100%;
-  }
-
-  .header__subtitle-decor {
-    margin-block-end: 11px;
   }
 
   .decorated-zone::before {
@@ -476,7 +468,6 @@
   .main__picture {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 19px;
-    /*padding-block-end: 34px;*/
   }
 }
 
@@ -555,6 +546,7 @@
   font-weight: 700;
   color: var(--title-color);
   text-shadow: 2px 2px 0px var(--title-shadow);
+  line-height: 82.5%;
 }
 
 @media (width < 768px) and (width >=375px) {
@@ -576,6 +568,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: start;
+  grid-column: 3 span;
 }
 
 @media (width <=768px) {
@@ -584,4 +577,3 @@
     flex-direction: column;
   }
 }
-
